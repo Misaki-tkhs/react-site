@@ -33,7 +33,7 @@ const HeaderLi = styled.li`
   padding: 4px 12px;
   color: #fff;
   cursor: pointer;
-  border-bottom: ${props => props.focused ? '2px solid #993311' : 'none'};
+  border-bottom: ${props => props.focused ? '3px solid orange' : 'none'};
 `
 
 const Hr = styled.hr`
