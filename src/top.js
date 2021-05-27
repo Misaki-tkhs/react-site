@@ -1,19 +1,17 @@
-const PROFILE = [
-  'Name',
-  'Address',
-  'BirthDay',
-  'Skill'
-];
+import styled from 'styled-components';
 
+const Title = styled.h1`
+  color: sandybrown;
+`
+const SubTitle = styled.h1`
+  color: azure;
+`
 
 export const Top = () => {
-  return (
+  return(
     <div>
-      {
-        PROFILE.map((prof,index) => {
-          return <div key={index}>{prof}</div>
-        })
-      }
+      <Title >MiSAKi TAKAHASHi</Title>
+      <SubTitle >Profile Site</SubTitle>
     </div>
   )
 }

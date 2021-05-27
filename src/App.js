@@ -1,51 +1,79 @@
 import React from 'react';
+import styled from 'styled-components';
 import {useState} from 'react';
-import {Top} from "./top.js";
+import {Introduction} from "./introduction";
 import {Hobby} from "./Hobby";
+import {Top} from "./top";
 
-function App() {
-  const [tab,setTab] = useState('top');
+
+const Background = styled.div`
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #333;
+`
+
+const Header = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 64px 0;
+`
+const HeaderUl = styled.ul`
+  font-size: 40px;
+  color: #fff;
+  float: left;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px;
+  animation: showText 4s backwards;
+  background-color: #555;
+`
+
+const HeaderLi = styled.li`
+  list-style: none;
+  padding: 4px 12px;
+  color: #fff;
+  cursor: pointer;
+  border-bottom: ${props => props.focused ? '2px solid #993311' : 'none'};
+`
+
+const Hr = styled.hr`
+  margin-bottom: 30px;
+  border-top:1px solid #111;
+  border-bottom:1.5px solid #777;
+`
+
+
+
+
+function App({data}) {
+  const [tab, setTab] = useState('top');
+  const [profs, setProfs] =useState(data);
+
+
+  const addProf = (prof) => {
+    setProfs([...profs,prof]);
+    setTab('introduction');
+  }
+
+
 
   return (
-    <div>
-      <header>
-        <ul>
-          <li onClick={() => setTab('top')}>トップ</li>
-          <li onClick={()=> setTab('hobby')}>ホビー</li>
-        </ul>
-      </header>
-      <hr/>
+    <Background>
+      <Header>
+        <Top />
+        <HeaderUl>
+          <HeaderLi focused={tab === 'introduction'} onClick={() => setTab('introduction')}>Self-Introduction</HeaderLi>
+        </HeaderUl>
+        <HeaderUl>
+          <HeaderLi focused={tab === 'hobby'} onClick={() => setTab('hobby')}>My Hobby</HeaderLi>
+        </HeaderUl>
+      </Header>
+      <Hr />
       {
-        tab === 'top' ? <Top /> : <Hobby />
+        tab === 'hobby' ? <Hobby onAddProf={addProf} /> : <Introduction profs={profs} /> 
       }
-    </div>
+    </Background>
   );
 }
-
-
-// class App extends React.Component{ 
-//   constructor(props) {
-//     super(props);
-//     this.state = {description: 'クリック前'}
-//   }
-//   changeDescription(){
-//     this.setState({description: 'クリック後'
-//   })
-//   }
-
-//   render() {
-//     const {description} = this.state;
-//     return(
-//       <div>
-//         {description}
-//         <Top title="取り扱い言語" />
-//         <button onClick={() => this.changeDescription()}>
-//           ボタン
-//         </button>
-//       </div>
-//     )
-//   }
-// }
-
 
 export default App;
