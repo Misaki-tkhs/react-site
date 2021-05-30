@@ -6,7 +6,7 @@ const ImgStyle = styled.img`
   width: 65%;
   display: block;
   border-radius: 5px;
-  margin-top: 60px;
+  margin-top: 50px;
 `
 
 function Img2() {

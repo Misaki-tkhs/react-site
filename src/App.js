@@ -13,18 +13,17 @@ const Background = styled.div`
 
 const Header = styled.header`
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   padding: 24px 64px 0;
 `
 const HeaderUl = styled.ul`
-  font-size: 40px;
+  font-size: 30px;
   color: #fff;
-  float: left;
   padding: 10px;
   border-radius: 5px;
   margin: 20px;
-  animation: showText 4s backwards;
   background-color: #555;
 `
 
@@ -59,8 +58,8 @@ function App({data}) {
 
   return (
     <Background>
+      <Top />
       <Header>
-        <Top />
         <HeaderUl>
           <HeaderLi focused={tab === 'introduction'} onClick={() => setTab('introduction')}>Self-Introduction</HeaderLi>
         </HeaderUl>

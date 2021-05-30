@@ -6,7 +6,7 @@ const Ul = styled.ul`
     color: azure;
     max-width: 1000px;
     width: 100%;
-    margin: 50px auto;
+    margin: 0 auto;
 `
 const LI = styled.li`
     position: relative;
@@ -14,6 +14,7 @@ const LI = styled.li`
 `
 
 const Contents = styled.div`
+    width: 100%;
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
@@ -28,6 +29,7 @@ const Introduction = styled.div`
     align-items: flex-end;
 `
 const H2 = styled.h2`
+    box-sizing: border-box;
     font-size: 50px;
     font-weight: bold;
     white-space: nowrap;
@@ -35,14 +37,15 @@ const H2 = styled.h2`
     padding: 20px 30px;
     letter-spacing: 1em;
     border-radius: 5px;
-    transform: translateY(-30px);
-    transition: 1s;
+    width: 100%;
 `
 const H3 = styled.h3`
+    box-sizing: border-box; 
     font-size: 30px;
     font-weight: bold;
     white-space: nowrap;
     background-color: rgba(27, 172, 147, 0.8);
+    margin-top: 10px;
     padding: 7px 15px;
     letter-spacing: 0.3em;
     border-radius: 5px;
@@ -57,8 +60,6 @@ const P = styled.p`
     margin-top: 15px;
     margin-bottom: 70px;
     border-radius: 5px;
-    transform: translateY(20px);
-    transition: 1.5s;
 `
 
 
