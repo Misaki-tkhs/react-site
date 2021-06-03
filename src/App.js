@@ -6,6 +6,8 @@ import {Hobby} from "./Hobby";
 import {Top} from "./top";
 
 
+
+
 const Background = styled.div`
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: #333;
